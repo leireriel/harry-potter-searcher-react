@@ -3,7 +3,9 @@ import { fetchCharacters } from './services/fetchCharacters';
 import Header from './components/Header';
 import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
+import CharacterCard from './components/CharacterCard';
 import Footer from './components/Footer';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -46,13 +48,30 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Filters
-          action={this.handleInputChange}
-        />
-        <CharacterList
-          characters={characters}
-          inputValue={inputValue}
-        />
+        <main>
+          <Switch>
+
+            <Route exact path="/" render={() =>
+              <Fragment>
+                <Filters
+                  action={this.handleInputChange}
+                />
+                <CharacterList
+                  characters={characters}
+                  inputValue={inputValue}
+                />
+              </Fragment>
+            } />
+
+            <Route path="/detail/:character" render={(paramPicker) =>
+              <CharacterCard
+                param={paramPicker.match.params.character}
+                characters={characters}
+              />
+            } />
+
+          </Switch>
+        </main>
         <Footer />
       </Fragment>
     );

@@ -16,6 +16,7 @@ class CharacterList extends Component {
                     src={item.image}
                     alt={item.name}
                   />
+                  <small>ver detalle</small>
                   <h2 className="name-character">
                     {item.name}
                   </h2>

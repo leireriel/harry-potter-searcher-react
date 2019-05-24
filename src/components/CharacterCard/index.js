@@ -1,9 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import CardList from './CardList';
-import CardNavigation from './CardNavigation';
+import CardList from './components/CardList';
+import CardNavigation from './components/CardNavigation';
 
 class CharacterCard extends Component {
+  componentWillUnmount() {
+    this.props.resetInputValue();
+  }
+
   render() {
     const { param, characters } = this.props;
     return (

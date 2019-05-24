@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
-import Header from './components/Header';
-import Filters from './components/Filters';
-import CharacterList from './components/CharacterList';
-import CharacterCard from './components/CharacterCard';
-import Footer from './components/Footer';
+import Header from './components/Header/index';
+import Filters from './components/Filters/index';
+import CharacterList from './components/CharacterList/index';
+import CharacterCard from './components/CharacterCard/index';
+import Footer from './components/Footer/index';
 import { Switch, Route } from 'react-router-dom';
+import './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
 
     this.getCharacters = this.getCharacters.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.resetInputValue = this.resetInputValue.bind(this);
   }
 
   componentDidMount() {
@@ -43,16 +45,22 @@ class App extends Component {
     })
   }
 
+  resetInputValue() {
+    this.setState({
+      inputValue: ''
+    })
+  }
+
   render() {
     const { characters, inputValue } = this.state;
     return (
       <Fragment>
-        <Header />
+        <Header/>
         <main>
           <Switch>
 
             <Route exact path="/" render={() =>
-              <Fragment>
+              <div className="home-page">
                 <Filters
                   action={this.handleInputChange}
                 />
@@ -60,19 +68,20 @@ class App extends Component {
                   characters={characters}
                   inputValue={inputValue}
                 />
-              </Fragment>
+              </div>
             } />
 
             <Route path="/detail/:character" render={paramPicker =>
               <CharacterCard
                 param={paramPicker.match.params.character}
                 characters={characters}
+                resetInputValue={this.resetInputValue}
               />
             } />
 
           </Switch>
         </main>
-        <Footer />
+        <Footer/>
       </Fragment>
     );
   }

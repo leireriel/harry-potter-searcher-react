@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
+import CharacterList from './components/CharacterList';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      characters: []
+      characters: [],
+      inputValue: ''
     }
 
     this.getCharacters = this.getCharacters.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -22,18 +25,23 @@ class App extends React.Component {
         const finalData = data.map((item, index) => {
           return { ...item, id: (index) };
         });
-
         this.setState({
           characters: finalData
         });
-        console.log(finalData)
       });
   }
 
+  handleInputChange(event) {
+    const triggerValue = event.currentTarget.value.toLowerCase();
+    this.setState({
+      inputValue: triggerValue
+    })
+  }
+
   render() {
-    const { characters } = this.state;
+    const { characters, inputValue } = this.state;
     return (
-      <React.Fragment>
+      <Fragment>
         <h1 className="title-hogwarts">
           Welcome to Hogwarts
         </h1>
@@ -44,28 +52,15 @@ class App extends React.Component {
           <input
             type="text"
             id="characters-finder"
+            placeholder="hermione"
+            onChange={this.handleInputChange}
           />
         </form>
-        <ol className="list-characters">
-          {characters.map((item, index) => {
-            return (
-              <li className="card-character" key={index}>
-                <img
-                  src={item.image}
-                  alt={item.name}
-                />
-                <h2 className="name-character">
-                  {item.name}
-                </h2>
-                <h3 className="house-character">
-                  {item.house}
-                </h3>
-              </li>
-            )
-          })
-          }
-        </ol>
-      </React.Fragment>
+        <CharacterList
+          characters={characters}
+          inputValue={inputValue}
+        />
+      </Fragment>
     );
   }
 }

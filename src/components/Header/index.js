@@ -5,13 +5,15 @@ import Logo from './images/logo.png';
 class Header extends Component {
   render() {
     return (
-      <header>
+      <header className="header">
         <h1 className="title-hogwarts">
-          <img
-            className="title-logo"
-            src={Logo}
-            alt="Harry Potter logo"
-          />
+          <div>
+            <img
+              className="title-logo"
+              src={Logo}
+              alt="Harry Potter"
+            />
+          </div>
           <span className="title-finder">
             finder
           </span>

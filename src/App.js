@@ -56,11 +56,11 @@ class App extends Component {
     return (
       <Fragment>
         <Header/>
-        <main>
+        <main className="main">
           <Switch>
 
             <Route exact path="/" render={() =>
-              <div className="home-page">
+              <Fragment>
                 <Filters
                   action={this.handleInputChange}
                 />
@@ -68,7 +68,7 @@ class App extends Component {
                   characters={characters}
                   inputValue={inputValue}
                 />
-              </div>
+              </Fragment>
             } />
 
             <Route path="/detail/:character" render={paramPicker =>

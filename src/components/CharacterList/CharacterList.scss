@@ -1,0 +1,43 @@
+.list-characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-character {
+  height: 280px;
+  width: 200px;
+  margin: 30px;
+}
+
+.card-gryffindor {
+  background-color: #670C02;
+  border: 13px solid #CC9911;
+  border-radius: 5px;
+}
+
+.card-slytherin {
+  background-color: #123401;
+  border: 13px solid #636663;
+  border-radius: 5px;
+}
+
+.card-ravenclaw {
+  background-color: #102E5F;
+  border: 13px solid #999999;
+  border-radius: 5px;
+}
+
+.card-hufflepuff {
+  background-color: #CC9911;
+  border: 13px solid #000000;
+  border-radius: 5px;
+}
+
+.img-character {
+  max-width: 240px;
+  max-height: 220px;
+}

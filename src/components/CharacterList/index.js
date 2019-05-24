@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './CharacterList.scss';
 
 class CharacterList extends Component {
   render() {
@@ -10,9 +11,19 @@ class CharacterList extends Component {
           .filter(item => item.name.toLowerCase().includes(inputValue))
           .map(item => {
             return (
-              <li className="card-character" key={item.id}>
+              <li
+                className={`card-character ${item.house === 'Gryffindor' ? 'card-gryffindor'
+                  :
+                  item.house === 'Slytherin' ? 'card-slytherin'
+                    :
+                    item.house === 'Ravenclaw' ? 'card-ravenclaw'
+                      :
+                      'card-hufflepuff'
+                  }`}
+                key={item.id}>
                 <Link to={`/detail/${item.id}`}>
                   <img
+                    className="img-character"
                     src={item.image}
                     alt={item.name}
                   />

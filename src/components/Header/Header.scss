@@ -1,3 +1,19 @@
+.header {
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
 .title-hogwarts {
-  color: red;
+  display: flex;
+  align-items: flex-end;
+}
+
+.title-logo {
+  display: flex;
+  width: 300px;
+}
+
+.title-finder {
+  display: flex;
 }

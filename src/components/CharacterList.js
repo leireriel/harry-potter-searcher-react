@@ -8,7 +8,7 @@ class CharacterList extends Component {
       <ol className="list-characters">
         {characters
           .filter(item => item.name.toLowerCase().includes(inputValue))
-          .map((item) => {
+          .map(item => {
             return (
               <li className="card-character" key={item.id}>
                 <Link to={`/detail/${item.id}`}>

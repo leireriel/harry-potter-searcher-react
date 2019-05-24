@@ -63,7 +63,7 @@ class App extends Component {
               </Fragment>
             } />
 
-            <Route path="/detail/:character" render={(paramPicker) =>
+            <Route path="/detail/:character" render={paramPicker =>
               <CharacterCard
                 param={paramPicker.match.params.character}
                 characters={characters}

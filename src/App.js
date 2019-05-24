@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { fetchCharacters } from './services/fetchCharacters';
+import Header from './components/Header';
+import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -42,24 +45,15 @@ class App extends Component {
     const { characters, inputValue } = this.state;
     return (
       <Fragment>
-        <h1 className="title-hogwarts">
-          Welcome to Hogwarts
-        </h1>
-        <form action="">
-          <label htmlFor="characters-finder">
-            Look for your favourite character
-          </label>
-          <input
-            type="text"
-            id="characters-finder"
-            placeholder="hermione"
-            onChange={this.handleInputChange}
-          />
-        </form>
+        <Header />
+        <Filters
+          action={this.handleInputChange}
+        />
         <CharacterList
           characters={characters}
           inputValue={inputValue}
         />
+        <Footer />
       </Fragment>
     );
   }

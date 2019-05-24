@@ -7,9 +7,9 @@ class CharacterList extends Component {
       <ol className="list-characters">
         {characters
         .filter(item => item.name.toLowerCase().includes(inputValue))
-        .map((item, index) => {
+        .map((item) => {
           return (
-            <li className="card-character" key={index}>
+            <li className="card-character" key={item.id}>
               <img
                 src={item.image}
                 alt={item.name}

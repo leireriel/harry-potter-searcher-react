@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Header.scss';
+import Hedwig from './images/hedwig.png';
 import Logo from './images/logo.png';
 
 class Header extends Component {
@@ -17,6 +18,10 @@ class Header extends Component {
           <span className="title-finder">
             finder
           </span>
+          <img
+            className="hedwig"
+            src={Hedwig}
+            alt="Hedwig eyes" />
         </h1>
       </header>
     );

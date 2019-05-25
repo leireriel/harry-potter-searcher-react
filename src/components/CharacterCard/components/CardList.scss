@@ -1,0 +1,60 @@
+.card-list-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.list-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 500px;
+}
+
+.detail-gryffindor {
+  border: 10px solid #670C02;
+  outline: 5px solid #CC9911;
+}
+
+.detail-slytherin {
+  border: 10px solid #123401;
+  outline: 5px solid #636663;
+}
+
+.detail-ravenclaw {
+  border: 10px solid #102E5F;
+  outline: 5px solid #999999;
+}
+
+.detail-hufflepuff {
+  border: 10px solid #CC9911;
+  outline: 5px solid #000000;
+}
+
+.img-card {
+  width: 170px;
+  height: 240px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  object-position: 0 0;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.data-card {
+  width: 400px;
+  padding-left: 20px;
+}
+
+.name-card {
+  font-size: 36px;
+  padding-bottom: 10px;
+}
+
+.house-card, .patronus-card, .birth-card, .alive-card {
+  padding-top: 6px;
+}

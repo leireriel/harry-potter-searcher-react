@@ -1,0 +1,20 @@
+.link-back {
+  display: block;
+  margin: 60px 0 0 40px;
+  text-decoration: none;
+  color: rgb(116, 56, 158);
+  font-size: 16px;
+  transition: background-color ease 1s, color ease 1s;
+  padding: 4px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px;
+  width: 130px;
+  text-align: center;
+  &:hover {
+    background-color: rgb(116, 56, 158);
+    color: white;
+  }
+  @media all and (min-width:830px) {
+  margin: 110px 0 0 40px;
+  }
+}

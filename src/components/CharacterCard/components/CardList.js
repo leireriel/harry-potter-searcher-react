@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import './CardList.scss';
 
 class CardList extends Component {
   render() {
@@ -10,44 +11,73 @@ class CardList extends Component {
       <Fragment>
 
         {characterSelected ?
-          <ol className="list-card">
-            <img
-              className="img-card"
-              src={characterSelected.image}
-              alt={characterSelected.name}
-            />
-            <div className="data-card">
-              <li className="name-card">
-                {characterSelected.name}
-              </li>
-              <li className="house-card">
-                Casa: {characterSelected.house}
-              </li>
-              <li className="birth-card">
-                Nacimiento: {characterSelected.yearOfBirth}
-              </li>
-              {characterSelected.hogwartsStaff ?
-                <li className="category-card">
-                  Categoría: {'Emplead@ en Hogwarts'}
-                </li>
+          <div className="card-list-wrapper">
+            <ol className={`list-card ${characterSelected.house === 'Gryffindor' ? 'detail-gryffindor'
+              :
+              characterSelected.house === 'Slytherin' ? 'detail-slytherin'
                 :
-                characterSelected.hogwartsStudent ?
-                  <li className="category-card">
-                    Categoría: {'Estudiante'}
+                characterSelected.house === 'Ravenclaw' ? 'detail-ravenclaw'
+                  :
+                  'detail-hufflepuff'
+              }`}>
+              <img
+                className="img-card"
+                src={characterSelected.image}
+                alt={characterSelected.name}
+              />
+              <div className="data-card">
+                {characterSelected.name ?
+                  <li className="name-card">
+                    {characterSelected.name}
                   </li>
                   :
                   null
-              }
-              <li className="patronus-card">
-                Patronus: {characterSelected.patronus}
-              </li>
-              <li className="alive-card">
-                Estado: {`${characterSelected.alive}` ? '¡Está viv@!'
+                }
+                {characterSelected.hogwartsStaff ?
+                  <li className="category-card">
+                    <small>{'Emplead@ en Hogwarts'}</small>
+                  </li>
                   :
-                  'RIP'}
-              </li>
-            </div>
-          </ol>
+                  null
+                }
+                {characterSelected.hogwartsStudent ?
+                  <li className="category-card">
+                    <small>{'Estudiante'}</small>
+                  </li>
+                  :
+                  null
+                }
+                {characterSelected.house ?
+                  <li className="house-card">
+                    Casa: {characterSelected.house}
+                  </li>
+                  :
+                  null
+                }
+                {characterSelected.patronus ?
+                  <li className="patronus-card">
+                    Patronus: {characterSelected.patronus}
+                  </li>
+                  : null
+                }
+                {characterSelected.yearOfBirth ?
+                  <li className="birth-card">
+                    Nació en {characterSelected.yearOfBirth}
+                  </li>
+                  :
+                  null
+                }
+                {characterSelected.alive !== undefined &&
+                  <li className="alive-card">
+                    {characterSelected.alive ? '¡Está viv@!'
+                      :
+                      'RIP :('
+                    }
+                  </li>
+                }
+              </div>
+            </ol>
+          </div>
           :
           <p>Cargando...</p>
         }

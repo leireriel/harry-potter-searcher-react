@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './CardNavigation.scss';
 
 class CardNavigation extends Component {
   render() {

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import CardList from './components/CardList';
 import CardNavigation from './components/CardNavigation';
+import './CharacterCard.scss';
 
 class CharacterCard extends Component {
   componentWillUnmount() {
@@ -12,7 +13,11 @@ class CharacterCard extends Component {
     const { param, characters } = this.props;
     return (
       <Fragment>
-        <Link to="/">Volver a la lista de personajes</Link>
+        <Link
+          className="link-back"
+          to="/">
+          Volver a la lista de personajes
+        </Link>
 
         <CardList
           param={param}

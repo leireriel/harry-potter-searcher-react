@@ -18,7 +18,7 @@ class Filters extends Component {
         <input
           type="text"
           id="characters-finder"
-          placeholder="Look for your favourite character or house"
+          placeholder="Look for character or house"
           className="input-search"
           onChange={action}
         />

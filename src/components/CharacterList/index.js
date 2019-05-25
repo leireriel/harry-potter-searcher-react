@@ -21,13 +21,19 @@ class CharacterList extends Component {
                       'card-hufflepuff'
                   }`}
                 key={item.id}>
-                <Link to={`/detail/${item.id}`}>
-                  <img
-                    className="img-character"
-                    src={item.image}
-                    alt={item.name}
-                  />
-                  <small>ver detalle</small>
+                <Link
+                  className="link-character"
+                  to={`/detail/${item.id}`}>
+                  <div className="img-wrapper-character">
+                    <img
+                      className="img-character"
+                      src={item.image}
+                      alt={item.name}
+                    />
+                  </div>
+                  <small className="detail-character">
+                    ver detalle
+                  </small>
                   <h2 className="name-character">
                     {item.name}
                   </h2>

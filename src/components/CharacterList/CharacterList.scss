@@ -5,7 +5,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  background: url("sky.jpg") fixed;
+  background: url("images/sky.jpg") fixed;
   background-size: cover;
   padding-top: 50px;
 }
@@ -14,33 +14,81 @@
   height: 280px;
   width: 200px;
   margin: 30px;
+  box-shadow: 0 0 10px white;
+  border-radius: 5px;
+  transition: transform ease 1s;
+  &:hover {
+    transform: translate(0, -10px);
+    .detail-character {
+      visibility: visible;
+    }
+  }
 }
 
 .card-gryffindor {
   background-color: #670C02;
   border: 13px solid #CC9911;
-  border-radius: 5px;
 }
 
 .card-slytherin {
   background-color: #123401;
   border: 13px solid #636663;
-  border-radius: 5px;
 }
 
 .card-ravenclaw {
   background-color: #102E5F;
   border: 13px solid #999999;
-  border-radius: 5px;
 }
 
 .card-hufflepuff {
   background-color: #CC9911;
   border: 13px solid #000000;
-  border-radius: 5px;
+}
+
+.link-character {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-character {
-  max-width: 240px;
-  max-height: 220px;
+  width: 190px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  object-position: 0 0;
+  margin-top: 4px;
+}
+
+.detail-character {
+  visibility: hidden;
+  color: gainsboro;
+  display: flex;
+  align-self: flex-end;
+  transition: visibility ease 1s;
+  font-size: 14px;
+  margin: 0 10px;
+  font-weight: bold;
+
+}
+
+.name-character {
+  display: flex;
+  align-self: flex-start;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 300;
+  height: 30px;
+  width: 190px;
+  overflow: hidden;
+}
+
+.house-character {
+  display: flex;
+  align-self: flex-start;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: 100;
 }

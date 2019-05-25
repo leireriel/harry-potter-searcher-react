@@ -6,14 +6,19 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <ul className="footer-list">
-          <li>¡Gracias por tu visita!</li>
-          <li>
-            <i className="fas fa-heart"></i>
+          <li className="footer-thanks">
+            ¡Gracias por tu visita!
           </li>
-          <li>
-            <p>Puedes ver más repos chachis aquí</p>
-            <i className="fab fa-github"></i>
-            <a href="https://github.com/leireriel">github.com/leireriel</a>
+          <li className="footer-github">
+            <p className="github-text">
+              Puedes ver más repos chachis aquí
+            </p>
+            <a
+              className="github-link"
+              href="https://github.com/leireriel">
+              <i className="fab fa-github"></i>
+              github.com/leireriel
+            </a>
           </li>
         </ul>
       </footer>

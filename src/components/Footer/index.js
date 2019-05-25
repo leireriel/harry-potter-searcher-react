@@ -15,7 +15,9 @@ class Footer extends Component {
             </p>
             <a
               className="github-link"
-              href="https://github.com/leireriel">
+              href="https://github.com/leireriel"
+              target="_blank"
+              rel="noopener noreferrer">
               <i className="fab fa-github"></i>
               <span> </span>
               github.com/leireriel

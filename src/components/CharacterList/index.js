@@ -8,7 +8,8 @@ class CharacterList extends Component {
     return (
       <ol className="list-characters">
         {characters
-          .filter(item => item.name.toLowerCase().includes(inputValue))
+          .filter(item => item.name.toLowerCase().includes(inputValue) ||
+            item.house.toLowerCase().includes(inputValue))
           .map(item => {
             return (
               <li
@@ -18,7 +19,9 @@ class CharacterList extends Component {
                     :
                     item.house === 'Ravenclaw' ? 'card-ravenclaw'
                       :
-                      'card-hufflepuff'
+                      item.house === 'Hufflepuff' ? 'card-hufflepuff'
+                        :
+                        'card-default'
                   }`}
                 key={item.id}>
                 <Link

@@ -12,19 +12,35 @@ class CardNavigation extends Component {
     const { characters } = this.props;
 
     return (
-      <nav>
-        {param > 0 ?
-          <Link to={`/detail/${previuosCharacter}`}>Ver anterior</Link>
-          :
-          <p>Este es el primer personaje</p>
-        }
-        <p>Estás viendo al personaje {currentCharacter} de {characters.length}</p>
-        {param < 24 ?
-          <Link to={`/detail/${nextCharacter}`}>Ver siguiente</Link>
-          :
-          <p>Este es el último personaje</p>
-        }
-      </nav>
+      <div className="nav-wrapper">
+        <nav className="nav-card">
+          {param > 0 ?
+            <Link
+              className="link-card"
+              to={`/detail/${previuosCharacter}`}>
+              Ver anterior
+          </Link>
+            :
+            <p className="info-card">
+              Este es el primer personaje
+          </p>
+          }
+          <p className="info-card">
+            Estás viendo al personaje {currentCharacter} de {characters.length}
+          </p>
+          {param < 24 ?
+            <Link
+              className="link-card"
+              to={`/detail/${nextCharacter}`}>
+              Ver siguiente
+          </Link>
+            :
+            <p className="info-card">
+              Este es el último personaje
+          </p>
+          }
+        </nav>
+      </div>
     );
   }
 }

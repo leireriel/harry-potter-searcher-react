@@ -14,7 +14,7 @@ class CharacterCard extends Component {
     return (
       <Fragment>
         <Link
-          className="link-back"
+          className="link-card link-back"
           to="/">
           Volver a la lista de personajes
         </Link>

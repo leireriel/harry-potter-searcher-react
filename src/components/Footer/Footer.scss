@@ -37,13 +37,21 @@
 }
 
 .github-link {
-  color: black;
+  color: rgb(116, 56, 158);
   text-decoration: none;
   font-weight: bold;
+  transition: color ease 1s;
+  &:hover {
+    text-shadow: 0 0 2px;
+    color: blueviolet;
+    .fa-github {
+      color: blueviolet;
+    }
+  }
 }
 
 .fa-github {
-  color: black;
+  color: rgb(116, 56, 158);
   @media all and (min-width:830px) {
     padding: 0 10px;
   }

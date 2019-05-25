@@ -1,0 +1,18 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-card {
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-column-gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.info-card {
+  text-align: center;
+}

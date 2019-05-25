@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './CharacterList.scss';
+import PropTypes from 'prop-types';
 
 class CharacterList extends Component {
   render() {
@@ -52,5 +53,10 @@ class CharacterList extends Component {
     );
   }
 }
+
+CharacterList.propTypes = {
+  characters: PropTypes.array,
+  inputValue: PropTypes.string,
+};
 
 export default CharacterList;

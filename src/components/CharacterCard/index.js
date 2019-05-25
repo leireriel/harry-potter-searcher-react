@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CardList from './components/CardList';
 import CardNavigation from './components/CardNavigation';
 import './CharacterCard.scss';
+import PropTypes from 'prop-types';
 
 class CharacterCard extends Component {
   componentWillUnmount() {
@@ -32,5 +33,11 @@ class CharacterCard extends Component {
     );
   }
 }
+
+CharacterCard.propTypes = {
+  resetInputValue: PropTypes.func,
+  param: PropTypes.number,
+  characters: PropTypes.array,
+};
 
 export default CharacterCard;

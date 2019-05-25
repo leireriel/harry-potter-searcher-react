@@ -73,7 +73,7 @@ class App extends Component {
 
             <Route path="/detail/:character" render={paramPicker =>
               <CharacterCard
-                param={paramPicker.match.params.character}
+                param={parseInt(paramPicker.match.params.character)}
                 characters={characters}
                 resetInputValue={this.resetInputValue}
               />

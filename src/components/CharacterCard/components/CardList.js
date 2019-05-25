@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './CardList.scss';
+import PropTypes from 'prop-types';
 
 class CardList extends Component {
   render() {
@@ -86,5 +87,10 @@ class CardList extends Component {
     );
   }
 }
+
+CardList.propTypes = {
+  param: PropTypes.number,
+  characters: PropTypes.array,
+};
 
 export default CardList;

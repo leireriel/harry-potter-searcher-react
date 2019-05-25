@@ -21,7 +21,8 @@ class Header extends Component {
           <img
             className="hedwig"
             src={Hedwig}
-            alt="Hedwig eyes" />
+            alt="Hedwig eyes"
+          />
         </h1>
       </header>
     );

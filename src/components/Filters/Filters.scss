@@ -1,0 +1,25 @@
+.form-search {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+  padding: 15px 0;
+}
+
+.label-search {
+  display: none;
+}
+
+.input-search {
+  font-size: 21px;
+  color: black;
+  border-radius: 3px;
+  padding: 10px;
+  border: 1px solid grey;
+  background-color: gainsboro;
+  &::placeholder {
+    font-size: 21px;
+    color: black;
+  }
+}

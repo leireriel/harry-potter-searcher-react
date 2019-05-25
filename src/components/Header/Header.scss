@@ -1,17 +1,22 @@
 .header {
-  min-height: 15vh;
+  height: 15vh;
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  width: 100vw;
 }
 
 .title-hogwarts {
   display: flex;
   align-items: flex-end;
+  margin: 0;
 }
 
 .title-logo {
   display: flex;
-  width: 300px;
+  width: 250px;
 }
 
 .title-finder {
@@ -19,9 +24,9 @@
 }
 
 .hedwig {
-  width: 120px;
+  width: 85px;
   position: relative;
-  top: -50px;
+  top: -40px;
   left: -40px;
   transform: rotate(20deg);
   //añadir movimiento

@@ -7,10 +7,16 @@
 .nav-card {
   font-size: 16px;
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: 100px 100px 100px;
   grid-column-gap: 15px;
   justify-items: center;
   align-items: center;
+  @media all and (min-width: 480px) {
+    grid-template-columns: 150px 150px 150px;
+  }
+  @media all and (min-width:830px) {
+    grid-template-columns: 200px 200px 200px;
+  }
 }
 
 .info-card {

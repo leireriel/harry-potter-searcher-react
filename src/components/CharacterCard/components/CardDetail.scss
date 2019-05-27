@@ -12,7 +12,13 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 500px;
+  max-width: 300px;
+  @media all and (min-width: 480px) {
+    max-width: 400px;
+  }
+  @media all and (min-width:830px) {
+    max-width: 500px;
+  }
 }
 
 .detail-gryffindor {
@@ -41,18 +47,25 @@
 }
 
 .img-card {
-  width: 170px;
+  width: 140px;
   height: 240px;
   object-fit: cover;
   object-position: 50% 50%;
   object-position: 0 0;
   margin: 10px;
   border-radius: 5px;
+  @media all and (min-width: 480px) {
+    width: 170px;
+  }
 }
 
 .data-card {
   width: 400px;
-  padding-left: 20px;
+  font-size: 16px;
+  @media all and (min-width: 480px) {
+    padding-left: 20px;
+    font-size: 20px;
+  }
 }
 
 .name-card {

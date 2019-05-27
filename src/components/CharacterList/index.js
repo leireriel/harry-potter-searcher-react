@@ -25,39 +25,44 @@ class CharacterList extends Component {
 
   render() {
     const { characters, inputValue } = this.props;
+    const paintCharacters =
+      characters
+        .filter(item => item.name.toLowerCase().includes(inputValue) ||
+          item.house.toLowerCase().includes(inputValue))
+        .map(item => {
+          return (
+            <li
+              className={`card-character ${this.houseStylesMatcher(item.house)}`}
+              key={item.id}>
+              <Link
+                className="link-character"
+                to={`/detail/${item.id}`}>
+                <div className="img-wrapper-character">
+                  <img
+                    className="img-character"
+                    src={item.image}
+                    alt={item.name}
+                  />
+                </div>
+                <small className="detail-character">
+                  ver detalle
+            </small>
+                <h2 className="name-character">
+                  {item.name}
+                </h2>
+                <h3 className="house-character">
+                  {item.house}
+                </h3>
+              </Link>
+            </li>
+          )
+        });
     return (
       <ol className="list-characters">
-        {characters
-          .filter(item => item.name.toLowerCase().includes(inputValue) ||
-            item.house.toLowerCase().includes(inputValue))
-          .map(item => {
-            return (
-              <li
-                className={`card-character ${this.houseStylesMatcher(item.house)}`}
-                key={item.id}>
-                <Link
-                  className="link-character"
-                  to={`/detail/${item.id}`}>
-                  <div className="img-wrapper-character">
-                    <img
-                      className="img-character"
-                      src={item.image}
-                      alt={item.name}
-                    />
-                  </div>
-                  <small className="detail-character">
-                    ver detalle
-                  </small>
-                  <h2 className="name-character">
-                    {item.name}
-                  </h2>
-                  <h3 className="house-character">
-                    {item.house}
-                  </h3>
-                </Link>
-              </li>
-            )
-          })
+        {paintCharacters.length === 0 && inputValue !== '' ?
+          <li className="try-again">Prueba otra vez ;&#41;</li>
+          :
+          paintCharacters
         }
       </ol>
     );

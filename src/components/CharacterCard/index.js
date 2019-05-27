@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import CardList from './components/CardList';
+import CardDetail from './components/CardDetail';
 import CardNavigation from './components/CardNavigation';
-import './CharacterCard.scss';
 import PropTypes from 'prop-types';
+import './CharacterCard.scss';
 
 class CharacterCard extends Component {
   componentWillUnmount() {
@@ -20,7 +20,7 @@ class CharacterCard extends Component {
           Volver a la lista de personajes
         </Link>
 
-        <CardList
+        <CardDetail
           param={param}
           characters={characters}
         />

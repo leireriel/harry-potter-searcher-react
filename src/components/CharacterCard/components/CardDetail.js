@@ -1,8 +1,27 @@
 import React, { Component, Fragment } from 'react';
-import './CardList.scss';
 import PropTypes from 'prop-types';
+import './CardDetail.scss';
 
-class CardList extends Component {
+class CardDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.houseDetailMatcher = this.houseDetailMatcher.bind(this);
+  }
+
+  houseDetailMatcher(house) {
+    let classHouse = 'detail-default';
+    if (house === 'Gryffindor') {
+      return classHouse = 'detail-gryffindor';
+    } else if (house === 'Slytherin') {
+      return classHouse = 'detail-slytherin';
+    } else if (house === 'Ravenclaw') {
+      return classHouse = 'detail-ravenclaw';
+    } else if (house === 'Hufflepuff') {
+      return classHouse = 'detail-hufflepuff';
+    }
+    return classHouse;
+  }
+
   render() {
     const { param, characters } = this.props;
     const characterSelected =
@@ -13,14 +32,7 @@ class CardList extends Component {
 
         {characterSelected ?
           <div className="card-list-wrapper">
-            <ol className={`list-card ${characterSelected.house === 'Gryffindor' ? 'detail-gryffindor'
-              :
-              characterSelected.house === 'Slytherin' ? 'detail-slytherin'
-                :
-                characterSelected.house === 'Ravenclaw' ? 'detail-ravenclaw'
-                  :
-                  'detail-hufflepuff'
-              }`}>
+            <ol className={`list-card ${this.houseDetailMatcher(characterSelected.house)}`}>
               <img
                 className="img-card"
                 src={characterSelected.image}
@@ -88,9 +100,9 @@ class CardList extends Component {
   }
 }
 
-CardList.propTypes = {
+CardDetail.propTypes = {
   param: PropTypes.number,
   characters: PropTypes.array,
 };
 
-export default CardList;
+export default CardDetail;

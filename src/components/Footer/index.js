@@ -19,7 +19,6 @@ class Footer extends Component {
               target="_blank"
               rel="noopener noreferrer">
               <i className="fab fa-github"></i>
-              <span> </span>
               github.com/leireriel
             </a>
           </li>

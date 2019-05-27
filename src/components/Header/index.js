@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Header.scss';
-import Hedwig from './images/hedwig.png';
 import Logo from './images/logo.png';
+import Hedwig from './images/hedwig.png';
+import './Header.scss';
 
 class Header extends Component {
   render() {

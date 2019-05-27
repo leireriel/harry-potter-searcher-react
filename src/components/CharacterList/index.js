@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './CharacterList.scss';
 import PropTypes from 'prop-types';
+import './CharacterList.scss';
 
 class CharacterList extends Component {
+  constructor(props) {
+    super(props);
+    this.houseStylesMatcher = this.houseStylesMatcher.bind(this);
+  }
+
+  houseStylesMatcher(house) {
+    let classHouse = 'card-default';
+    if (house === 'Gryffindor') {
+      return classHouse = 'card-gryffindor';
+    } else if (house === 'Slytherin') {
+      return classHouse = 'card-slytherin';
+    } else if (house === 'Ravenclaw') {
+      return classHouse = 'card-ravenclaw';
+    } else if (house === 'Hufflepuff') {
+      return classHouse = 'card-hufflepuff';
+    }
+    return classHouse;
+  }
+
   render() {
     const { characters, inputValue } = this.props;
     return (
@@ -14,16 +33,7 @@ class CharacterList extends Component {
           .map(item => {
             return (
               <li
-                className={`card-character ${item.house === 'Gryffindor' ? 'card-gryffindor'
-                  :
-                  item.house === 'Slytherin' ? 'card-slytherin'
-                    :
-                    item.house === 'Ravenclaw' ? 'card-ravenclaw'
-                      :
-                      item.house === 'Hufflepuff' ? 'card-hufflepuff'
-                        :
-                        'card-default'
-                  }`}
+                className={`card-character ${this.houseStylesMatcher(item.house)}`}
                 key={item.id}>
                 <Link
                   className="link-character"

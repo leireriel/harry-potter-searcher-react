@@ -8,13 +8,11 @@ class Header extends Component {
     return (
       <header className="header">
         <h1 className="title-hogwarts">
-          <div>
-            <img
-              className="title-logo"
-              src={Logo}
-              alt="Harry Potter"
-            />
-          </div>
+          <img
+            className="title-logo"
+            src={Logo}
+            alt="Harry Potter"
+          />
           <span className="title-finder">
             finder
           </span>

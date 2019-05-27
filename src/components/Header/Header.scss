@@ -19,30 +19,44 @@
   display: flex;
   align-items: flex-end;
   margin: 0;
+  position: relative;
   @media all and (min-width:830px) {
-    position: relative;
     top: -10px;
   }
 }
 
 .title-logo {
   display: flex;
-  width: 220px;
+  width: 200px;
+  @media all and (min-width:410px) {
+    width: 220px;
+  }
 }
 
 .title-finder {
   display: flex;
+  font-size: 32px;
+  @media all and (min-width:410px) {
+    font-size: 40px;
+  }
 }
 
 .hedwig {
-  width: 70px;
-  position: relative;
-  top: -32px;
-  left: -40px;
+  width: 60px;
+  position: absolute;
+  top: 12px;
+  right: 0;
   transform: rotate(20deg);
   animation-name: hedwig-opaque;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+  @media all and (min-width:410px) {
+    width: 70px;
+    top: 4px;
+  }
+  @media all and (min-width:830px) {
+    top: 25px;
+  }
 }
 
 @keyframes hedwig-opaque {

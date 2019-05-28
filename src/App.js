@@ -14,12 +14,16 @@ class App extends Component {
 
     this.state = {
       characters: [],
-      inputValue: ''
+      inputValue: '',
+      ancestryValue: '',
+      studentValue: ''
     }
 
     this.getCharacters = this.getCharacters.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.resetInputValue = this.resetInputValue.bind(this);
+    this.getAncestry = this.getAncestry.bind(this);
+    this.getStudentOrStaff = this.getStudentOrStaff.bind(this);
   }
 
   componentDidMount() {
@@ -51,8 +55,23 @@ class App extends Component {
     })
   }
 
+  getAncestry(event) {
+    const triggerAncestry = event.currentTarget.value;
+    this.setState({
+      ancestryValue: triggerAncestry
+    })
+  }
+  
+  getStudentOrStaff(event) {
+    const triggerStudent = event.currentTarget.value;
+    this.setState({
+      studentValue: triggerStudent
+    })
+    console.log(triggerStudent)
+  }
+
   render() {
-    const { characters, inputValue } = this.state;
+    const { characters, inputValue, ancestryValue, studentValue } = this.state;
     return (
       <Fragment>
         <Header/>
@@ -63,10 +82,15 @@ class App extends Component {
               <Fragment>
                 <Filters
                   action={this.handleInputChange}
+                  ancestry={this.getAncestry}
+                  studentOrStaff={this.getStudentOrStaff}
+                  studentValue={studentValue}
                 />
                 <CharacterList
                   characters={characters}
                   inputValue={inputValue}
+                  ancestryValue={ancestryValue}
+                  studentValue={studentValue}
                 />
               </Fragment>
             } />

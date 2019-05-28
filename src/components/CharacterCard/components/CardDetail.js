@@ -88,6 +88,11 @@ class CardDetail extends Component {
                     }
                   </li>
                 }
+                {characterSelected.wand.core ?
+                  <li>{characterSelected.wand.core}</li>
+                  :
+                  null
+                }
               </div>
             </ol>
           </div>

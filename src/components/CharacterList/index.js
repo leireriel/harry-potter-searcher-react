@@ -24,11 +24,18 @@ class CharacterList extends Component {
   }
 
   render() {
-    const { characters, inputValue } = this.props;
+    const { characters, inputValue, ancestryValue, studentValue } = this.props;
     const paintCharacters =
       characters
         .filter(item => item.name.toLowerCase().includes(inputValue) ||
           item.house.toLowerCase().includes(inputValue))
+        .filter(item => item.ancestry.toLowerCase().includes(ancestryValue))
+        .filter(item => studentValue === 'student' ? item.hogwartsStudent
+          :
+          studentValue === 'staff' ? item.hogwartsStaff
+            :
+            item
+        )
         .map(item => {
           return (
             <li
@@ -53,6 +60,9 @@ class CharacterList extends Component {
                 <h3 className="house-character">
                   {item.house}
                 </h3>
+                <h4>
+                  {item.wand.wood}
+                </h4>
               </Link>
             </li>
           )

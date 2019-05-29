@@ -24,11 +24,12 @@ class CharacterList extends Component {
   }
 
   render() {
-    const { characters, inputValue } = this.props;
+    const { characters, inputValue, yearValue } = this.props;
     const paintCharacters =
       characters
         .filter(item => item.name.toLowerCase().includes(inputValue) ||
           item.house.toLowerCase().includes(inputValue))
+        .filter(item => item.yearOfBirth >= yearValue)
         .map(item => {
           return (
             <li

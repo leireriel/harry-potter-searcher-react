@@ -14,12 +14,14 @@ class App extends Component {
 
     this.state = {
       characters: [],
-      inputValue: ''
+      inputValue: '',
+      yearValue: 0
     }
 
     this.getCharacters = this.getCharacters.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.resetInputValue = this.resetInputValue.bind(this);
+    this.handleYearChange = this.handleYearChange.bind(this);
   }
 
   componentDidMount() {
@@ -51,8 +53,20 @@ class App extends Component {
     })
   }
 
+  handleYearChange(event) {
+    let triggerYear = parseInt(event.currentTarget.value);
+    if (event.currentTarget.value === '') {
+      triggerYear = 0
+    }
+    this.setState({
+      yearValue: triggerYear
+    })
+  }
+
+
+
   render() {
-    const { characters, inputValue } = this.state;
+    const { characters, inputValue, yearValue } = this.state;
     return (
       <Fragment>
         <Header/>
@@ -63,10 +77,12 @@ class App extends Component {
               <Fragment>
                 <Filters
                   action={this.handleInputChange}
+                  actionYear={this.handleYearChange}
                 />
                 <CharacterList
                   characters={characters}
                   inputValue={inputValue}
+                  yearValue={yearValue}
                 />
               </Fragment>
             } />

@@ -4,7 +4,7 @@ import './Filters.scss';
 
 class Filters extends Component {
   render() {
-    const { action } = this.props;
+    const { action, actionYear } = this.props;
     return (
       <form
         action=""
@@ -22,6 +22,12 @@ class Filters extends Component {
           placeholder="Look for character or house"
           className="input-search"
           onChange={action}
+        />
+
+        <label htmlFor="yearOfBirth">year of birth</label>
+        <input type="number"
+          id="yearOfBirth"
+          onChange={actionYear}
         />
       </form>
     );

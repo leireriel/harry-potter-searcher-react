@@ -39,4 +39,12 @@ npm install
 npm start
 ```
 
+## 🆕 Update public folder
+
+1. Add `"homepage": "./"` at the top of `package.json`
+2. Replace all `http` by `https`
+3. Run `(sudo) npm run build`
+4. `(sudo) rm -rf docs`
+5. `mv build docs
+
 ## If you want to make a suggestion, please open an Issue :) <br /> <br /> Thanks! 💌

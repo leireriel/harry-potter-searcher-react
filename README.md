@@ -44,7 +44,7 @@ npm start
 1. Add `"homepage": "./"` at the top of `package.json`
 2. Replace all `http` by `https`
 3. Run `(sudo) npm run build`
-4. `(sudo) rm -rf docs`
-5. `mv build docs
+4. If a `docs` folder already exists: `(sudo) rm -rf docs`
+5. `mv build docs`
 
 ## If you want to make a suggestion, please open an Issue :) <br /> <br /> Thanks! 💌
